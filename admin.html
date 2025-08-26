@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Add Pet</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h1 class="admin-title">Add a New Pet</h1>
+
+    <!-- Info Panel -->
+    <div class="admin-info-box">
+      💡 Fill in the pet details carefully. All fields are required.
+    </div>
+
+    <!-- Pet Form -->
+    <form id="admin-form" class="admin-form">
+      
+      <div class="admin-form-group">
+        <label for="name">Pet Name</label>
+        <input type="text" id="name" required>
+      </div>
+
+      <div class="admin-form-group">
+        <label for="breed">Breed</label>
+        <input type="text" id="breed" required>
+      </div>
+
+      <div class="admin-form-group">
+        <label for="age">Age</label>
+        <input type="text" id="age" required>
+      </div>
+
+      <div class="admin-form-group">
+        <label for="image">Image URL</label>
+        <input type="text" id="image" required>
+      </div>
+
+      <div class="admin-form-group">
+        <label for="description">Description</label>
+        <textarea id="description" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">Add Pet</button>
+      <p id="admin-msg" class="success-msg"></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('admin-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('admin-msg').textContent = "✅ Pet added successfully!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

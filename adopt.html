@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adopt a Pet</title>
+  <link rel="stylesheet" href="css/adopt.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Adoption Form</h1>
+    <form id="adoption-form">
+      <label for="name">Your Full Name</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email Address</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="address">Address</label><br>
+      <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+      <label for="petName">Pet You Want to Adopt</label><br>
+      <input type="text" id="petName" name="petName" required><br><br>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <p id="success-msg" style="color: green;"></p>
+  </div>
+
+  <script>
+    document.getElementById('adoption-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('success-msg').textContent = "Your adoption request has been submitted!";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
